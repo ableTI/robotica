@@ -1,0 +1,25 @@
+https://docs.zephyrproject.org/latest/boards/pjrc/teensy4/doc/index.html
+https://docs.zephyrproject.org/latest/develop/getting_started/index.html
+
+replace /path/to/project/ with the actual path to you project
+
+Create, configure and enter virtual enviorment
+    python3 -m venv /path/to/project/.venv
+    source /path/to/project/.venv/bin/activate
+    pip install west
+    west init /path/to/project/
+    cd /path/to/project/
+    west update
+    west zephyr-export
+    west packages pip --install
+
+Install zephyr SDK
+    cd /path/to/project/zephyr
+    west sdk install
+
+build project for teensy 4.1:
+    west build -b teensy41 /path/to/project/
+
+flash project onto the device:
+    cd /path/to/project/
+    west flash
