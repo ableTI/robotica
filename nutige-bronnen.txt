@@ -73,5 +73,7 @@ specifieke dingen:
         https://www.pjrc.com/teensy/troubleshoot.html
 	omni wheels:
 		http://files.andymark.com/2008CON-Omni-Baker-McKenzie.pdf
+    zephyr:
+        https://github.com/maksimdrachov/zephyr-rtos-tutorial
 
 

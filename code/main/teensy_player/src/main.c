@@ -1,48 +1,42 @@
-/*
- * Copyright (c) 2016 Intel Corporation
- *
- * SPDX-License-Identifier: Apache-2.0
- */
-
-#include <stdio.h>
 #include <zephyr/kernel.h>
+#include <zephyr/device.h>
 #include <zephyr/drivers/gpio.h>
+#include <zephyr/sys/printk.h>
+#include <zephyr/sys/__assert.h>
+#include <string.h>
 
-/* 1000 msec = 1 sec */
-#define SLEEP_TIME_MS   1000
+/* size of stack area used by each thread */
+#define STACKSIZE 1024
 
-/* The devicetree node identifier for the "led0" alias. */
-#define LED0_NODE DT_ALIAS(led0)
+/*the pinout configuration*/
+/*https://docs.zephyrproject.org/latest/boards/pjrc/teensy4/doc/index.html*/
+/*motors pins*/
+#define m1enA DT_ALIAS(GPIO2_10)    /*pin 6*/
+#define m1enB DT_ALIAS(GPIO4_8)     /*pin 5*/
+#define m1pwm1 DT_ALIAS(GPIO4_6)    /*pin 4*/
+#define m1pwm2 DT_ALIAS(GPIO4_5)    /*pin 3*/
+/*encoder pins*/
+#define m1encoA DT_ALIAS(GPIO2_12)  /*pin 32*//*encoder number 1*/
+#define Nm1encoA INT_TO_POINTER(0)    /*gives encoder number N*/
+#define m1encoB DT_ALIAS(GPIO3_22)  /*pin 31*//*encoder number 2*/
+#define Nm1encoB INT_TO_POINTER(1)    /*gives encoder number N*/
 
-/*
- * A build error on this line means your board is unsupported.
- * See the sample documentation for information on how to fix this.
- */
-static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
 
-int main(void)
+/*set priorities*/
+#define ENC_ISR_PRIO 1 /* set encoder interrupt service routine*/
+
+
+void ENCO_ISR(void *encN){
+    if (encN == 0){
+
+    }
+
+}
+
+
+void ENC_ISR_installer(void)
 {
-    int ret;
-    bool led_state = true;
-
-    if (!gpio_is_ready_dt(&led)) {
-        return 0;
-    }
-
-    ret = gpio_pin_configure_dt(&led, GPIO_OUTPUT_ACTIVE);
-    if (ret < 0) {
-        return 0;
-    }
-
-    while (1) {
-        ret = gpio_pin_toggle_dt(&led);
-        if (ret < 0) {
-            return 0;
-        }
-
-        led_state = !led_state;
-        printf("LED state: %s\n", led_state ? "ON" : "OFF");
-        k_msleep(SLEEP_TIME_MS);
-    }
-    return 0;
+    /*sets up the interupts for the encoder at same priority, need to configure FIFO in case of simultanius call*/
+    IRQ_CONNECT(MY_DEV_IRQ, ENC_ISR_PRIO, m1encoA_ISR, Nm1encoA, MY_IRQ_FLAGS);
+    IRQ_CONNECT(MY_DEV_IRQ, ENC_ISR_PRIO, m1encoB_ISR, Nm1encoB, MY_IRQ_FLAGS);
 }
