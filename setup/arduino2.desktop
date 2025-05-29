@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Arduino IDE 2.X
+Exec=/usr/share/arduino-ide_nightly-20250529_Linux_64bit/arduino-ide
+Icon=arduino
