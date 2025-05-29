@@ -509,12 +509,18 @@
     },
     "net_colors": null,
     "netclass_assignments": {
-      "12V": "HIGH POWER",
-      "GND": "HIGH POWER",
+      "12V": [
+        "HIGH POWER"
+      ],
+      "GND": [
+        "HIGH POWER"
+      ],
       "Net-(D1-A)": [
         "HIGH POWER"
       ],
-      "Net-(D1-K)": "HIGH POWER",
+      "Net-(D1-K)": [
+        "HIGH POWER"
+      ],
       "Net-(D2-A)": [
         "HIGH POWER"
       ],
@@ -536,10 +542,18 @@
       "Net-(teensy1-17_A3_TX4_SDA1)": [
         "SIGNAL"
       ],
-      "S": "SIGNAL",
-      "unconnected-(D4-K-Pad1)": "HIGH POWER",
-      "unconnected-(D5-A-Pad2)": "HIGH POWER",
-      "unconnected-(teensy1-17_A3_TX4_SDA1-Pad39)": "SIGNAL"
+      "S": [
+        "SIGNAL"
+      ],
+      "unconnected-(D4-K-Pad1)": [
+        "HIGH POWER"
+      ],
+      "unconnected-(D5-A-Pad2)": [
+        "HIGH POWER"
+      ],
+      "unconnected-(teensy1-17_A3_TX4_SDA1-Pad39)": [
+        "SIGNAL"
+      ]
     },
     "netclass_patterns": []
   },

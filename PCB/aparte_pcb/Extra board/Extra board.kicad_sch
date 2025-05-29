@@ -1952,6 +1952,250 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "New_Library:soccer-com-mod"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 9.906 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Library:soccer-communication-module"
+				(at 0.762 12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "soccer-com-mod_0_1"
+				(rectangle
+					(start -6.35 -10.16)
+					(end 6.35 7.62)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "soccer-com-mod_1_1"
+				(pin input line
+					(at -8.89 0 0)
+					(length 2.54)
+					(name "gnd"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -8.89 -2.54 0)
+					(length 2.54)
+					(name "3v3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -8.89 -5.08 0)
+					(length 2.54)
+					(name "logv"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -8.89 -7.62 0)
+					(length 2.54)
+					(name "BAt+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 8.89 5.08 180)
+					(length 2.54)
+					(name "OUT1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 8.89 2.54 180)
+					(length 2.54)
+					(name "OUT2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 8.89 0 180)
+					(length 2.54)
+					(name "RX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 8.89 -2.54 180)
+					(length 2.54)
+					(name "TX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 8.89 -5.08 180)
+					(length 2.54)
+					(name "d+a0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 8.89 -7.62 180)
+					(length 2.54)
+					(name "d-a1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "TB9051FTG_2"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2526,6 +2770,28 @@
 			)
 		)
 	)
+	(global_label "OUT2"
+		(shape input)
+		(at 128.27 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "13e3ba57-e1f4-4b69-b25e-00788605c08f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 136.0933 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SDA"
 		(shape input)
 		(at 185.42 59.69 180)
@@ -2724,6 +2990,28 @@
 			)
 		)
 	)
+	(global_label "D-A1"
+		(shape input)
+		(at 128.27 88.9 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4194292f-de6b-410e-8374-264a9a0889de")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 136.3957 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "pr8"
 		(shape input)
 		(at 184.15 121.92 180)
@@ -2790,7 +3078,7 @@
 			)
 		)
 	)
-	(global_label "GND"
+	(global_label "D-A1"
 		(shape input)
 		(at 185.42 39.37 180)
 		(fields_autoplaced yes)
@@ -2802,7 +3090,7 @@
 		)
 		(uuid "5645835d-c0e4-4f73-8e0e-c37d65aa507f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 178.5643 39.37 0)
+			(at 177.2943 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3076,7 +3364,7 @@
 			)
 		)
 	)
-	(global_label "GND"
+	(global_label "D+A0"
 		(shape input)
 		(at 185.42 41.91 180)
 		(fields_autoplaced yes)
@@ -3088,7 +3376,7 @@
 		)
 		(uuid "897f85b8-0378-4287-9733-7642c510d4b3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 178.5643 41.91 0)
+			(at 177.2943 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3133,6 +3421,28 @@
 		(uuid "8c2c6de0-e702-44fb-a130-b482061497c5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 178.0201 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "5v"
+		(shape input)
+		(at 110.49 86.36 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9140c067-7431-41c5-864a-836fb53931ca")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 105.3277 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3208,6 +3518,28 @@
 			)
 		)
 	)
+	(global_label "D+A0"
+		(shape input)
+		(at 128.27 86.36 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9e8d91df-a1b7-433c-b3b6-da4c3956b4bb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 136.3957 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "5v"
 		(shape input)
 		(at 185.42 64.77 180)
@@ -3252,7 +3584,7 @@
 			)
 		)
 	)
-	(global_label "GND"
+	(global_label "OUT2"
 		(shape input)
 		(at 185.42 44.45 180)
 		(fields_autoplaced yes)
@@ -3264,7 +3596,7 @@
 		)
 		(uuid "a635eb6e-c9e5-403b-8e2d-f8872fbbf610")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 178.5643 44.45 0)
+			(at 177.5967 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3472,6 +3804,28 @@
 			)
 		)
 	)
+	(global_label "OUT1"
+		(shape input)
+		(at 128.27 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cd21395a-de09-42ad-b5da-a51818140bd4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 136.0933 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "pr6"
 		(shape input)
 		(at 68.58 171.45 180)
@@ -3661,6 +4015,28 @@
 		(uuid "f6c20f01-a8b5-4ec8-9614-b46591a57aa6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 178.02 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 110.49 81.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fefad99d-ec05-46df-817a-6966de94ec6a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 103.6343 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4392,6 +4768,98 @@
 			(project "Extra board"
 				(path "/ebdfeadc-0cb5-437f-902a-83bcc6a66eb3"
 					(reference "DR2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "New_Library:soccer-com-mod")
+		(at 119.38 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e53b8096-e5a6-461f-820e-5b8756b8f135")
+		(property "Reference" "U1"
+			(at 119.38 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 119.38 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:soccer-communication-module"
+			(at 120.142 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 119.38 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 119.38 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "8ebccf01-f536-4d24-a4b3-f291954a9a05")
+		)
+		(pin "8"
+			(uuid "47daf68e-df76-4243-8ce7-13edfbf33302")
+		)
+		(pin "10"
+			(uuid "f248d593-2b24-45be-ae54-75c85381cffd")
+		)
+		(pin "9"
+			(uuid "fc6f7b2b-0525-4e4a-b22d-0b7b59b08369")
+		)
+		(pin "6"
+			(uuid "2490dbc0-5f0e-4f24-8c15-0dd55ac59191")
+		)
+		(pin "7"
+			(uuid "3f21af23-92ab-4741-8b6c-87e444580abc")
+		)
+		(pin "3"
+			(uuid "df31ed7a-5c6c-4e4a-9401-7e3385de6b2d")
+		)
+		(pin "1"
+			(uuid "b48bda64-5766-49c5-8e30-60bac1e3bdc0")
+		)
+		(pin "4"
+			(uuid "8f12c86b-a5c6-40f5-8aa0-936b01137041")
+		)
+		(pin "2"
+			(uuid "91a45629-e886-4c9c-af3a-fd5dde1df991")
+		)
+		(instances
+			(project ""
+				(path "/ebdfeadc-0cb5-437f-902a-83bcc6a66eb3"
+					(reference "U1")
 					(unit 1)
 				)
 			)
