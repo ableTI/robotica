@@ -41,9 +41,87 @@ else
     useradd $user
 fi
 echo 'You will now need to select what this script should configure.'
-read -p 'Do you want to install  a desktop enviorment(grapical display support)?' DE
-read -p 'Do you want to install arduino IDE version one and two?' ard
-read -p 'Do you want to install and configure git?' git
+while true; do
+    read -p 'Do you want to install  a desktop enviorment(grapical display support)?' DE
+    case $DE in
+        Y*|y*)
+            break
+            ;;
+        n*|N*)
+            break
+            ;;
+        *)
+            echo "Did not recognize input please retry"
+            ;;
+    esac
+
+done
+while true; do
+    read -p 'Do you want to install arduino IDE version one and two?' ard
+    case $ard in
+        Y*|y*)
+            break
+            ;;
+        n*|N*)
+            break
+            ;;
+        *)
+            echo "Did not recognize input please retry"
+            ;;
+    esac
+done
+while true; do
+    read -p 'Do you want to install openMV IDE' omv
+    case $omv in
+        Y*|y*)
+            break
+            ;;
+        n*|N*)
+            break
+            ;;
+        *)
+            echo "Did not recognize input please retry"
+            ;;
+    esac
+done
+while true; do
+    read -p 'Do you want to install and configure git? [Y]es [N]o' git
+    case $git in
+        Y*|y*)
+            read -p 'Please enter location of the secret file (secrets.tar.gz.gpg)' secloc
+            if [ -f $secloc ]; then
+                echo "File found!"
+                break
+            fi
+            echo "File $secloc not found!"
+            read -p "Is the file on an external drive?" inp4
+            case $inp4 in
+                Y*|y*)
+                    fdisk -l
+                    read -p "Please enter the drive where the secrets are located.[/dev/sdXN](where x is an letter and N an number)" drv
+                    mkdir /mnt/secdrive
+                    mount $drv /mnt/secdrive
+                    echo "The external drive is now mounted at /mnt/secdrive, please cd into it and locate where the secrets.tar.gz.gpg file is located. After this you can rerun the script."
+                    exit
+                    ;;
+                n*|N*)
+                    echo "In that case i can not help you."
+                    read -p "Do you still wich to configure git? [Y]es [N]o" git
+                    ;;
+                *)
+                    echo "Did not recognize input please retry"
+                    ;;
+            esac
+            ;;
+        n*|N*)
+            break
+            ;;
+        *)
+            echo "Did not recognize input please retry"
+            ;;
+    esac
+
+done
 while true; do
     read -p 'Do you want to clone the robosoccer git repository? [Y]es or [N]o' gitrep
     case $gitrep in
@@ -116,39 +194,101 @@ while true; do
 done
 
 #setup DE
-apt install xfce4-goodies xfce4 lightdm xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xscreensaver-screensaver-dizzy xscreensaver-screensaver-webcollage supertuxkart -y
-wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/xscreensaver.desktop -O /etc/xdg/autostart/xscreensaver.desktop
-apt remove gnome-screensaver
-wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/.xscreensaver -O "/home/$user/.xscreensaver"
-
+case $DE in
+    Y*|y*)
+        apt install xfce4-goodies xfce4 lightdm xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xscreensaver-screensaver-dizzy xscreensaver-screensaver-webcollage supertuxkart -y
+        wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/xscreensaver.desktop -O /etc/xdg/autostart/xscreensaver.desktop
+        apt remove gnome-screensaver
+        wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/.xscreensaver -O "/home/$user/.xscreensaver"
+        ;;
+esac
 
 #install arduino ide
-apt install arduino usbutils unzip wget -y
-wget https://downloads.arduino.cc/arduino-ide/nightly/arduino-ide_nightly-20250529_Linux_64bit.zip -O /usr/share/arduino-ide_nightly-20250529_Linux_64bit.zip
-unzip /usr/share/arduino-ide_nightly-20250529_Linux_64bit.zip -d /usr/share/arduino-ide_nightly-20250529_Linux_64bit
-rm /usr/share/arduino-ide_nightly-20250529_Linux_64bit.zip
-wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/arduino2.desktop -O /usr/share/applications/arduino2.desktop
+case $DE in
+    Y*|y*)
+        apt install arduino usbutils unzip wget -y
+        wget https://downloads.arduino.cc/arduino-ide/nightly/arduino-ide_nightly-20250529_Linux_64bit.zip -O /usr/share/arduino-ide_nightly-20250529_Linux_64bit.zip
+        unzip /usr/share/arduino-ide_nightly-20250529_Linux_64bit.zip -d /usr/share/arduino-ide_nightly-20250529_Linux_64bit
+        rm /usr/share/arduino-ide_nightly-20250529_Linux_64bit.zip
+        wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/arduino2.desktop -O /usr/share/applications/arduino2.desktop
+        ;;
+esac
 
 #install openMV IDE
-apt install usbutils -y
-wget https://github.com/openmv/openmv-ide/releases/download/development/openmv-ide-linux-x86_64-4.6.1.tar.gz -O /tmp/openmv.tar.gz
-tar -xzf /tmp/openmv.tar.gz --directory /tmp/
-sh /tmp/openmv-ide/setup.sh
-rm /tmp/openmv.tar.gz
-rm -rf /tmp/openmv-ide/
+case $omv in
+    Y*|y*)
+        apt install usbutils -y
+        wget https://github.com/openmv/openmv-ide/releases/download/development/openmv-ide-linux-x86_64-4.6.1.tar.gz -O /tmp/openmv.tar.gz
+        tar -xzf /tmp/openmv.tar.gz --directory /tmp/
+        sh /tmp/openmv-ide/setup.sh
+        rm /tmp/openmv.tar.gz
+        rm -rf /tmp/openmv-ide/-
+        ;;
+esac
 
 #setup GIT
-apt install git -y
-    #secure download method
-gpg --import ./secrets/public.key
-gpg --import ./secrets/private.key
-mkdir -p "/home/$user/.ssh/"
-cp ./secrets/ssh-robosoccer "/home/$user/.ssh/ssh-robosoccer"
-cp ./secrets/ssh-robosoccer.pub "/home/$user/.ssh/ssh-robosoccer.pub"
-sudo -u $user "git config --global user.signingkey 08242B7544C76B9E9B4EFB91C6C9DC589850AB7D"
-wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/.gitmessage.txt -O /home/$user/.gitmessage.txt
-sudo -u $user  "git config --global commit.template ~/.gitmessage.txt"
+case $git in
+    Y*|y*)
+        apt install git wget gnupg-utils fdisk -y
+        gpg --output /tmp/secrets.tar.gz --decrypt $secloc
+        tar -xzf /tmp/secrets.tar.gz /tmp/
+        gpg --import  /tmp/secrets/public.key
+        gpg --import  /tmp/secrets/private.key
+        mkdir -p "/home/$user/.ssh/"
+        cp ./secrets/ssh-robosoccer "/home/$user/.ssh/ssh-robosoccer"
+        cp ./secrets/ssh-robosoccer.pub "/home/$user/.ssh/ssh-robosoccer.pub"
+        sudo -u $user "git config --global user.signingkey 08242B7544C76B9E9B4EFB91C6C9DC589850AB7D"
+        wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/.gitmessage.txt -O /home/$user/.gitmessage.txt
+        sudo -u $user  "git config --global commit.template ~/.gitmessage.txt"
+        ;;
+esac
 
 #download git repo
-sudo -u $user "git clone git@github.com:mendelcollege-robotics/robotica.git $gitreploc"
+case $gitrep in
+    Y*|y*)
+        sudo -u $user "git clone git@github.com:mendelcollege-robotics/robotica.git $gitreploc"
+        ;;
+esac
+
+cat << "EOF"
+
+
+
+
+
+
+                ________________
+               /                \
+               | Setup complete |
+               |    see you     |
+               |   next time!   |
+               \_____    _______/
+                    |  /
+                    | /
+                    |/
+            \|/
+        -----------
+        |         |
+        |  ~    0 |
+        |         |
+        | \_____/ |
+        -----------
+        __/    \__
+       /    \ /   \
+      /  |[] |  |  \
+     /  /|   |  |\  \
+    |  | |   |  | |  |
+    |  | |   |  | |  |
+    |__| |      | |__|
+    {  } ==={}=== {  }
+    /||\ |  ||  | /||\
+         |  ||  |
+         |  ||  |
+         |  ||  |
+         |  ||  |
+     /---   ||   ---\
+    /______/  \______\
+EOF
+
+
 
