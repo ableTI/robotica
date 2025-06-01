@@ -11,7 +11,7 @@ In order to boot the system you will need to turn of the device where you will r
 In the terminal type *passwd*
 
 # Setup git
-In order to use git you will need to configure an [GPG]https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key and an [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) key. [How to use git](https://education.github.com/git-cheat-sheet-education.pdf)
+In order to use git you will need to configure an [GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) and an [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) key. [DONT FORGET](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) && [How to use git](https://education.github.com/git-cheat-sheet-education.pdf)
 
 # Setup arduino 1.x
 open a terminal and enter, 
@@ -22,9 +22,11 @@ open a terminal and enter,
 
 2. Extract it.
 
-3. Place it into the /usr/share folder with the command *mv /path/to/arduino-ide_2.X.X_Linux_64bit /usr/sharearduino-ide_2.X.X_Linux_64bit*
+3. Place it into the /usr/share folder with the command *sudo mv /path/to/arduino-ide_2.X.X_Linux_64bit /usr/sharearduino-ide_2.X.X_Linux_64bit*
 
 4. Create an .desktop file in /usr/share/applications/ called arduino2.desktop with [this](https://github.com/mendelcollege-robotics/robotica/blob/main/setup/arduino2.desktop) content by entering *sudo wget https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/arduino2.desktop -O /usr/share/applications/arduino2.desktop*
+
+5. Edit the file to your version with *sudo nano /usr/share/applications/arduino2.desktop*. To exit see help commands below (^ means ctrl).
 
 # [Setup teensyduino](https://www.pjrc.com/teensy/td_download.html)
 
@@ -50,4 +52,4 @@ in your terminal run:
   make gcc gcc-multilib g++-multilib libsdl2-dev libmagic1 \
   python3-venv putty supertuxkart thefuck sl inkscape blender \
   freecad kate vlc krita gnupg-utils micro nano cheese \
-  kleopatra qbittorrent wireguard nmap usb-utils gparted
+  kleopatra qbittorrent wireguard nmap usb-utils gparted*
