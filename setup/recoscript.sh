@@ -47,7 +47,7 @@ while true; do
     esac
 
 done
-while true;
+while true; do
     read -p 'Please enter location of the secret file (secrets.tar.gz.gpg): ' secloc
     if [ -f $secloc ]; then
         echo "File found!"

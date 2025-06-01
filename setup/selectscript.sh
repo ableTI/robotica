@@ -135,7 +135,7 @@ while true; do
     esac
 done
 while true; do
-    read -p 'Do you want to clone the robosoccer git repository? [Y]es or [N]o' gitrep
+    read -p 'Do you want to clone the robosoccer git repository? [Y]es or [N]o:  ' gitrep
     case $gitrep in
         y*|Y*)
             while true; do
