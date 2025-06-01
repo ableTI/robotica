@@ -89,7 +89,7 @@ echo $pass | sudo -S -k rm -rf /tmp/openmv-ide/
 echo $pass | sudo -S -k wget https://downloads.arduino.cc/arduino-ide/nightly/arduino-ide_nightly-20250529_Linux_64bit.zip -O /usr/share/arduino-ide_nightly-20250529_Linux_64bit.zip
 echo $pass | sudo -S -k unzip /usr/share/arduino-ide_nightly-20250529_Linux_64bit.zip -d /usr/share/arduino-ide_nightly-20250529_Linux_64bit
 echo $pass | sudo -S -k rm /usr/share/arduino-ide_nightly-20250529_Linux_64bit.zip
-echo $pass | sudo -S -k wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/arduino2.desktop -O /usr/share/applications/arduino2.desktop
+echo $pass | sudo -S -k wget https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/arduino2.desktop -O /usr/share/applications/arduino2.desktop
 
 #setup GIT/the repo
 echo $pass | sudo -S -k gpg --output /tmp/secrets.tar.gz --decrypt $secloc
@@ -100,13 +100,13 @@ echo $pass | sudo -S -k mkdir -p "/home/$user/.ssh/"
 echo $pass | sudo -S -k cp ./secrets/ssh-robosoccer "/home/$user/.ssh/ssh-robosoccer"
 echo $pass | sudo -S -k cp ./secrets/ssh-robosoccer.pub "/home/$user/.ssh/ssh-robosoccer.pub"
 sudo -u $user "git config --global user.signingkey 08242B7544C76B9E9B4EFB91C6C9DC589850AB7D"
-echo $pass | sudo -S -k wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/.gitmessage.txt -O /home/$user/.gitmessage.txt
+echo $pass | sudo -S -k wget https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/.gitmessage.txt -O /home/$user/.gitmessage.txt
 sudo -u $user  "git config --global commit.template ~/.gitmessage.txt"
 
 #setup xscreensaver
-echo $pass | sudo -S -k wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/xscreensaver.desktop -O /etc/xdg/autostart/xscreensaver.desktop
+echo $pass | sudo -S -k wget https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/xscreensaver.desktop -O /etc/xdg/autostart/xscreensaver.desktop
 echo $pass | sudo -S -k apt remove gnome-screensaver
-echo $pass | sudo -S -k wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/.xscreensaver -O "/home/$user/.xscreensaver"
+echo $pass | sudo -S -k wget https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/.xscreensaver -O "/home/$user/.xscreensaver"
 
 #setup password
 case $chpw in

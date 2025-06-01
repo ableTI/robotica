@@ -44,10 +44,10 @@ while true; do
     read -p "Please select (1)The automatic setup script, (2)The guided setup script or (3)Exit this script)? [1]/[2]/[3]:  " chpw
     case $chpw in
         1|a*|A*)
-            sh -c "$(curl -sSL https://github.com/mendelcollege-robotics/robotica/blob/main/setup/recoscr.sh)"
+            sh -c "$(curl -sSL https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/recoscript.sh)"
             ;;
         2|g*|G*)
-            sh -c "$(curl -sSL https://github.com/mendelcollege-robotics/robotica/blob/main/setup/selectscr.sh)"
+            sh -c "$(curl -sSL https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/selectscript.sh)"
             ;;
         3|e*|E*)
             ;;

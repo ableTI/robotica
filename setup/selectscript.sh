@@ -217,9 +217,9 @@ esac
 case $xscr in
     Y*|y*)
         apt install xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xscreensaver-screensaver-dizzy xscreensaver-screensaver-webcollage supertuxkart -y
-        wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/xscreensaver.desktop -O /etc/xdg/autostart/xscreensaver.desktop
+        wget https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/xscreensaver.desktop -O /etc/xdg/autostart/xscreensaver.desktop
         apt remove gnome-screensaver
-        wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/.xscreensaver -O "/home/$user/.xscreensaver"
+        wget https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/.xscreensaver -O "/home/$user/.xscreensaver"
         ;;
 esac
 
@@ -230,7 +230,7 @@ case $DE in
         wget https://downloads.arduino.cc/arduino-ide/nightly/arduino-ide_nightly-20250529_Linux_64bit.zip -O /usr/share/arduino-ide_nightly-20250529_Linux_64bit.zip
         unzip /usr/share/arduino-ide_nightly-20250529_Linux_64bit.zip -d /usr/share/arduino-ide_nightly-20250529_Linux_64bit
         rm /usr/share/arduino-ide_nightly-20250529_Linux_64bit.zip
-        wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/arduino2.desktop -O /usr/share/applications/arduino2.desktop
+        wget https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/arduino2.desktop -O /usr/share/applications/arduino2.desktop
         ;;
 esac
 
@@ -258,7 +258,7 @@ case $git in
         cp ./secrets/ssh-robosoccer "/home/$user/.ssh/ssh-robosoccer"
         cp ./secrets/ssh-robosoccer.pub "/home/$user/.ssh/ssh-robosoccer.pub"
         sudo -u $user "git config --global user.signingkey 08242B7544C76B9E9B4EFB91C6C9DC589850AB7D"
-        wget https://github.com/mendelcollege-robotics/robotica/blob/main/setup/.gitmessage.txt -O /home/$user/.gitmessage.txt
+        wget https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/.gitmessage.txt -O /home/$user/.gitmessage.txt
         sudo -u $user  "git config --global commit.template ~/.gitmessage.txt"
         ;;
 esac

@@ -4,4 +4,4 @@
 
 3. In order to boot the system you will need to turn of the device where you will run it on. After that you will need to go into you system's boot menu. For the laptops at school you will need to enter it with this [manual](https://support.lenovo.com/us/en/solutions/ht104668-how-to-select-boot-device-from-bios-boot-menu-ideapad-thinkpad-thinkstation-thinkcentre-ideacentre). If you want to do it via another device you will need to search for an manual yourself.
 
-4. Run the [setup script](https://github.com/mendelcollege-robotics/robotica/blob/main/setup/setupscr.sh) via *sh -c "$(curl -sSL https://github.com/mendelcollege-robotics/robotica/blob/main/setup/setupscr.sh)"*
+4. Run the [setup script](https://github.com/mendelcollege-robotics/robotica/blob/main/setup/setupscr.sh) via *sh -c "$(curl -sSL https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/setupscr.sh)"*
