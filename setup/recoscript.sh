@@ -4,11 +4,10 @@ user=user
 pass=2235
 #
 #check internet connection
-wget -q --spider https://github.com
-if [ $? -eq 0 ]; then
+if ping -q -w 1 -c 1 `ip r | grep default | cut -d ' ' -f 3` > /dev/null ; then
     echo 'Internet connection found'
 else
-    echo 'Error, either your device is off-line or https://github.com is off-line.'
+    echo 'Error, either your device appears to be off-line.'
     exit
 fi
 

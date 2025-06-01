@@ -3,15 +3,15 @@ echo 'Welkom to the robosoccer guided installment script!'
 
 #check sudo
 if [ `whoami` != root ]; then
-    echo Please run this script as root or using sudo
+    echo "Please run this script as root or using sudo"
+    echo "To exit press Ctrl-c"
     exit
 fi
 #check internet connection
-wget -q --spider https://github.com
-if [ $? -eq 0 ]; then
+if ping -q -w 1 -c 1 `ip r | grep default | cut -d ' ' -f 3` > /dev/null ; then
     echo 'Internet connection found'
 else
-    echo 'Error, either your device is off-line or https://github.com is off-line.'
+    echo 'Error, either your device appears to be off-line.'
     exit
 fi
 

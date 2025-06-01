@@ -50,6 +50,7 @@ while true; do
             sh -c "$(curl -sSL https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/selectscript.sh)"
             ;;
         3|e*|E*)
+            exit
             ;;
         *)
             echo 'Unrecognised input, please try again'
