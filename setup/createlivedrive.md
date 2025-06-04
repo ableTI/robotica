@@ -13,6 +13,8 @@ In the terminal type *passwd*
 # Setup git
 In order to use git you will need to configure an [GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) and an [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) key. [DONT FORGET](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) && [How to use git](https://education.github.com/git-cheat-sheet-education.pdf)
 
+Configure the [commit template](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) *wget https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/.gitmessage.txt -O ~/.gitmessage.txt && git config --global commit.template ~/.gitmessage.txt*
+
 # Setup arduino 1.x
 open a terminal and enter, 
 *sudo apt install arduino*

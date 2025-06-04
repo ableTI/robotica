@@ -3,16 +3,18 @@
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/sys/printk.h>
 #include <zephyr/sys/__assert.h>
+#include <zephyr/drivers/uart.h>
+#include <zephyr/drivers/pwm.h>
 #include <string.h>
 
 /* size of stack area used by each thread */
-#define STACKSIZE 1024
+#define GEN_THRESD_STACKSIZE 1024
 
 /*the pinout configuration*/
 /*https://docs.zephyrproject.org/latest/boards/pjrc/teensy4/doc/index.html*/
 /*motors pins*/
-#define m1enA DT_ALIAS(GPIO2_10)    /*pin 6*/
-#define m1enB DT_ALIAS(GPIO4_8)     /*pin 5*/
+#define m1enA DT_ALIAS(GPIO2_10)    /*pin 6*//*Motor 1 EN A*/
+#define m1enB DT_ALIAS(GPIO4_8)     /*pin 5*//*Motor 1 EN B*/
 #define m1pwm1 DT_ALIAS(GPIO4_6)    /*pin 4*/
 #define m1pwm2 DT_ALIAS(GPIO4_5)    /*pin 3*/
 /*encoder pins*/
@@ -43,9 +45,8 @@ void ENCO_ISR(void *encN){
 
 }
 
-
 void ENC_ISR_installer(void){
-    /*sets up the interupts for the encoder at same priority, need to configure FIFO in case of simultanius call*/
+    /*sets up the interupts for the encoder at same priority, need to configure FIFO in case of simultaneous call*/
     IRQ_CONNECT(m1encoA, ENC_ISR_PRIO, ENCO_ISR, '0', MY_IRQ_FLAGS);
     IRQ_CONNECT(m1encoB, ENC_ISR_PRIO, ENCO_ISR, '1', MY_IRQ_FLAGS);
 }

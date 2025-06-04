@@ -58,6 +58,8 @@ specifieke dingen:
             https://pidexplained.com/pid-controller-explained/
             https://docs.arduino.cc/libraries/pid/
             https://pknessness.github.io/pid_sim/pid.html
+            https://www.digikey.be/en/maker/projects/introduction-to-pid-controllers/763a6dca352b4f2ba00adde46445ddeb
+            https://www.digikey.be/en/maker/projects/how-to-tune-a-pid-controller/9ee9a111aef049af9f84f785779989ec
 
         ohmi wheel:
             https://robotics.stackexchange.com/questions/7829/how-to-program-a-three-wheel-omni
@@ -75,5 +77,8 @@ specifieke dingen:
 		http://files.andymark.com/2008CON-Omni-Baker-McKenzie.pdf
     zephyr:
         https://github.com/maksimdrachov/zephyr-rtos-tutorial
+        https://docs.zephyrproject.org/latest/build/kconfig/menuconfig.html
+        https://www.zephyrproject.org/zephyrrtos-threads-work-queues-message-queues-and-how-we-use-them/https://docs.zephyrproject.org/latest/kernel/services/threads/
+        https://www.digikey.be/en/maker/profiles/72825bdd887a427eaf8d960b6505adac?y=74af3695201f4abfab26c5045ada74a7&g=newest&o=72825bdd887a427eaf8d960b6505adac&page=1&show=yes
 
 
