@@ -3,8 +3,8 @@
 # About
 This is the repository for all the files associated with, and used to create, a soccer robot for participation in the [Robocup](https://www.robocup.org/leagues/18). Made by students of the Mendelcollege, from team 'Mendel'. Our team consists of: Abel, Jits, Jorn, Lucas, Nathanaël, Ruben and Robin.
 
-We will be participating in the Robocup Junior Soccer Lightweight 2.2. 2 Robots will play against 2 others on a field that resembles a human soccer field while both teams try to score in the opponents goal. There will be 2 rounds, each round will last 10 minutes with a 5 minutes break in between. One may only win with a 10 point difference. There will be a coin toss at the start of the game that will decide who can choose to either kick to ball or choose wich end the ball gets kicked to. The team that looses the coin toss gets the other option.
-
+We will be participating in the Robocup Junior Soccer Lightweight 2:2. 2 Robots will play against 2 others on a field that resembles a human soccer field while both teams try to score in the opponents goal. There will be 2 rounds, each round will last 10 minutes with a 5 minutes break in between. One may only win with a 10 point difference or when at the end of the match they have more points. There will be a coin toss at the start of the game that will decide who can choose to either kick to ball or choose wich end the ball gets kicked to. The team that looses the coin toss gets the other option.
+  
 This is the Soccer Field. Official picture from the RoboCupJunior website.
 ![alt text](https://junior.robocup.org/wp-content/uploads/2025/01/SoccerFieldDrawings-1536x1087.png)
 
