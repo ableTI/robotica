@@ -16,6 +16,7 @@ specifieke dingen:
         https://git-scm.com/about/branching-and-merging
         https://github.com/apps/desktop
         https://code.visualstudio.com/docs/sourcecontrol/intro-to-git
+        https://github.com/Aman1337g/GitHub-Cli-CheatSheet
 
     platformio:     #Teensy progameer methode
         https://docs.platformio.org/en/latest/
