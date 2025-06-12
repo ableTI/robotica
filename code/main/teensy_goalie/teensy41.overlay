@@ -1,0 +1,58 @@
+/*
+ *
+ * This is the overlay  device tree file for the teensy 4.1 in the robosoccer mendelcollege robot.
+ *
+ * For more information on overlay files see
+ * https://docs.zephyrproject.org/latest/build/dts/howtos.html#set-devicetree-overlays
+ * https://www.digikey.be/en/maker/tutorials/2025/introduction-to-zephyr-part-4-devicetree-tutorial
+ *
+ */
+/ {
+    aliases {
+        powerswitch = &soft_power_switch;
+        redled = &red_led;
+        greenled = &green_led;
+        bueled = &blue_led;
+        en3a = &pwm_dev0;
+    };
+
+    buttons {
+        compatible = "gpio-keys";
+        debounce-interval-ms = <50>;
+        polling-mode;
+
+        soft_power_switch: d5 {
+            gpios = <&gpio4 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        };
+    };
+    leds {
+        compatible = "gpio-leds";
+        red_led: red-led {
+            gpios = <&gpio2 29 GPIO_ACTIVE_HIGH>;
+            label = "LED Pin 34 --> RED";
+        };
+        green_led: green-led {
+            gpios = <&gpio2 7 GPIO_ACTIVE_HIGH>;
+            label = "LED Pin 33 --> GREEN";
+        };
+        blue_led: blue-led {
+            gpios = <&gpio1 23 GPIO_ACTIVE_HIGH>;
+            label = "LED Pin 16 --> BLUE";
+        };
+    };
+    pwmdevs {
+        compatible = "imx-pwm";
+        pwm_dev0: pwm_dev_0 {
+            pwms = <&gpio2 10>;
+        };
+    };
+
+};
+&flexpwm1 {
+    status = "ok";
+    flexpwm1_pwm0: flexpwm1_pwm0 {
+        status = "ok";
+    };
+
+};
+

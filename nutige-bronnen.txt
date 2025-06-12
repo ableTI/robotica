@@ -81,5 +81,6 @@ specifieke dingen:
         https://docs.zephyrproject.org/latest/build/kconfig/menuconfig.html
         https://www.zephyrproject.org/zephyrrtos-threads-work-queues-message-queues-and-how-we-use-them/https://docs.zephyrproject.org/latest/kernel/services/threads/
         https://www.digikey.be/en/maker/profiles/72825bdd887a427eaf8d960b6505adac?y=74af3695201f4abfab26c5045ada74a7&g=newest&o=72825bdd887a427eaf8d960b6505adac&page=1&show=yes
+        https://docs.zephyrproject.org/latest/build/dts/bindings.html
 
 
