@@ -8,12 +8,15 @@ Flash it using [Rufus] (https://rufus.ie/nl/). The default settings are mostly f
 In order to boot the system you will need to turn of the device where you will run it on. After that you will need to go into you system's boot menu. For the laptops at school you will need to enter it with this [manual](https://support.lenovo.com/us/en/solutions/ht104668-how-to-select-boot-device-from-bios-boot-menu-ideapad-thinkpad-thinkstation-thinkcentre-ideacentre). If you want to do it via another device you will need to search for an manual yourself.
 
 # Change password
-In the terminal type *passwd*
+In the terminal type *passwd* and follow the instructions
 
 # Setup git
-In order to use git you will need to configure an [GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) and an [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) key. [DONT FORGET](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) && [How to use git](https://education.github.com/git-cheat-sheet-education.pdf)
+In order to use git you will need to configure an [GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) and an [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) key. [DONT FORGET](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) && [How to use git](https://education.github.com/git-cheat-sheet-education.pdf).
+(SSH is blocked on the mendelnetwork so setup https auth via *gh auth*)
 
 Configure the [commit template](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) *wget https://raw.githubusercontent.com/mendelcollege-robotics/robotica/refs/heads/main/setup/.gitmessage.txt -O ~/.gitmessage.txt && git config --global commit.template ~/.gitmessage.txt*
+
+clone repo using *git clone repolink*
 
 # Setup arduino 1.x
 open a terminal and enter, 
